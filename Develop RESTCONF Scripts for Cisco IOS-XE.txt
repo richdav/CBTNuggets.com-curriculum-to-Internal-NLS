@@ -1,0 +1,33 @@
+Develop RESTCONF Scripts for Cisco IOS-XE
+Entry24 mins6 videos
+http://devit-college.cisco.com/nls/it-training/restconf-scripts-cisco-ios-xe
+
+Prep router for RESTCONF access:
+
+(config)# hostname myswitch
+(config)# ip domain-name thegeekstuff.com
+myswitch(config)# crypto key generate rsa
+# line vty 0 4
+(config-line)# transport input ssh
+(config-line)# login local
+(config-line)# password 7
+(config-line)# exit
+# line console 0
+(config-line)# logging synchronous
+(config-line)# login local
+myswitch# config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+myswitch(config)# username me password mypassword
+myswitch# enable secret myenablepassword
+
+
+Try it out in postman:
+make sure you set your headers:
+{"key":"Accept","value":"application/yang-data+json","description":"","type":"text","enabled":true}]
+{"key":"Content-Type,"value":"application/yang-data+json","description":"","type":"text","enabled":true}]
+
+If you do a postman GET on a CSR for the capabilities https://192.133.185.240/restconf/data/netconf-state/capabilities you will get a return of all the capabilities. 
+One capablity of which is "http://cisco.com/ns/yang/Cisco-IOS-XE-interfaces-oper?module=Cisco-IOS-XE-interfaces-oper&revision=2020-07-01",
+Q. how would one know that there is a container called "interfaces" under the capability "Cisco-IOS-XE-interfaces-oper"?
+
+If you take the capabilities and do a postman get on https://192.133.185.240/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces , you will get info on interfaces.
