@@ -20,6 +20,10 @@ myswitch# config t
 Enter configuration commands, one per line.  End with CNTL/Z.
 myswitch(config)# username me password mypassword
 myswitch# enable secret myenablepassword
+***
+ip http server
+ip http secure-server
+*** 
 
 Also: The CLI command to enable RESTCONF is displayed below:
 CODE SNIPPET
