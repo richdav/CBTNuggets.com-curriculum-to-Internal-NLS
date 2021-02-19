@@ -2,6 +2,7 @@ Develop RESTCONF Scripts for Cisco IOS-XE
 Entry24 mins6 videos
 http://devit-college.cisco.com/nls/it-training/restconf-scripts-cisco-ios-xe
 
+reference notes: https://developer.cisco.com/docs/standard-network-devices/#!enabling-restconf-on-ios-xe/addressing-and-ports
 Prep router for RESTCONF access:
 
 (config)# hostname myswitch
